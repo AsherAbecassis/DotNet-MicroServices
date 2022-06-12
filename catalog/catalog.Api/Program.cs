@@ -19,6 +19,7 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
+    //https://localhost:5001/swagger/index.html
     app.UseSwaggerUI();
 }
 
