@@ -1,5 +1,5 @@
 {
-  "FilePath": "/Users/asher/Development/olaInc/micro2/catalog/catalog.Api/catalog.Api.csproj",
+  "FilePath": "/Users/asher/Development/olaInc/micro2/basket/basket.Api/basket.Api.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-3.0",
     "LanguageVersion": "6.0",
@@ -16295,7 +16295,7 @@
     ],
     "CSharpLanguageVersion": 1000
   },
-  "RootNamespace": "catalog.Api",
+  "RootNamespace": "basket.Api",
   "Documents": [],
   "SerializationFormat": "0.2"
 }
