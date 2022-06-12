@@ -23,6 +23,8 @@ namespace catalog.Api.Controllers
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }
 
+
+
         [HttpGet]
         [ProducesResponseType(typeof(IEnumerable<Product>), (int)HttpStatusCode.OK)]
         public async Task<ActionResult<IEnumerable<Product>>> GetProducts()
@@ -30,6 +32,8 @@ namespace catalog.Api.Controllers
             var products = await _iproduct.GetAllProducts();
             return Ok(products);
         }
+
+
 
         [HttpGet("{id:length(24)}", Name = "GetProduct")]
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
@@ -45,6 +49,8 @@ namespace catalog.Api.Controllers
             return Ok(product);
         }
 
+
+
         [Route("[action]/{category}", Name = "GetProductByCategory")]
         [HttpGet]
         [ProducesResponseType(typeof(IEnumerable<Product>), (int)HttpStatusCode.OK)]
@@ -53,6 +59,8 @@ namespace catalog.Api.Controllers
             var products = await _iproduct.GetProductByCategory(category);
             return Ok(products);
         }
+
+
 
         [HttpPost]
         [ProducesResponseType(typeof(Product), (int)HttpStatusCode.OK)]
@@ -63,12 +71,16 @@ namespace catalog.Api.Controllers
             return CreatedAtRoute("GetProduct", new { id = product.Id }, product);
         }
 
+
+
         [HttpPut]
         [ProducesResponseType(typeof(Product), (int)HttpStatusCode.OK)]
         public async Task<IActionResult> UpdateProduct([FromBody] Product product)
         {
             return Ok(await _iproduct.UpdateProduct(product));
         }
+
+
 
         [HttpDelete("{id:length(24)}", Name = "DeleteProduct")]
         [ProducesResponseType(typeof(Product), (int)HttpStatusCode.OK)]
